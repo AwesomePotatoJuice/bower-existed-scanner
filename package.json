@@ -1,0 +1,24 @@
+{
+  "name": "bower-existing-scanner",
+  "version": "0.0.1",
+  "main": "index.js",
+  "description": "Scan existing bower components and generate a new bower.json",
+  "homepage": "https://github.com/chuyik/bower-existing-scanner",
+  "author": "Edward Chu",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/chuyik/bower-existing-scanner.git"
+  },
+  "license": "MIT",
+  "ignore": [
+    "node_modules"
+  ],
+  "dependencies": {
+    "readdirp": "^1.1.0"
+  },
+  "keywords": [
+    "bower",
+    "existing",
+    "scanner"
+  ]
+}
