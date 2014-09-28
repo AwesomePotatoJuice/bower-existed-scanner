@@ -1,13 +1,13 @@
 {
-  "name": "bower-existing-scanner",
+  "name": "bower-existed-scanner",
   "version": "0.0.1",
   "main": "index.js",
-  "description": "Scan existing bower components and generate a new bower.json",
-  "homepage": "https://github.com/chuyik/bower-existing-scanner",
+  "description": "Scan the existed installed bower components, and export it as the dependency list.",
+  "homepage": "https://github.com/chuyik/bower-existed-scanner",
   "author": "Edward Chu",
   "repository": {
     "type": "git",
-    "url": "https://github.com/chuyik/bower-existing-scanner.git"
+    "url": "https://github.com/chuyik/bower-existed-scanner.git"
   },
   "license": "MIT",
   "ignore": [
@@ -18,7 +18,7 @@
   },
   "keywords": [
     "bower",
-    "existing",
+    "existed",
     "scanner"
   ]
 }

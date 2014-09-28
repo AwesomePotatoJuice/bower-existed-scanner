@@ -1,8 +1,8 @@
-Scan existing installed bower components, and export it as the dependency list.
+Scan the existed installed bower components, and export it as the dependency list.
 
 # Installation
 ```
-npm install bower-existing-scanner
+npm install bower-existed-scanner
 ```
 
 # Usage
