@@ -5,8 +5,7 @@ var scanDirPath, exportPath = './_bower.json';
 var exportData = {
     "dependencies": {}
 };
-// 'D:/works/test/itownet_internal_study/www/lib';
-// './_bower.json';
+
 process.argv.forEach(function (val, index) {
   switch(index){
     case 2:
@@ -18,7 +17,7 @@ process.argv.forEach(function (val, index) {
   }
 });
 
-if(!scanDirPath) throw '---\nError: Directory location is not given, \nplease run it like: "node index.json /work/js/components".';
+if(!scanDirPath) throw '---\nError: Directory location is not given, \nplease run it like: \nMac: "node . /Users/u/works/bower_components" \nWin: "node . D:/works/bower_components"';
 if(!fs.lstatSync(scanDirPath).isDirectory()) throw '---\nError: The given ' + scanDirPath + ' is not a directory.';
 
 readdirp({
