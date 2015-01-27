@@ -44,25 +44,52 @@ function fileProcessed(entry) {
 }
 
 function allProcessed(err, res) {
-  console.log('Components found:');
-  printJSON(exportData.dependencies);
+  if(!err){
+    printResult(exportData);
 
-  fs.writeFile(exportPath, JSON.stringify(exportData, null, 2), 'utf8', function(err) {
-    if (err) {
-      console.log(err);
-    } else {
-      console.log("The file was saved at: " + exportPath);
-    }
-  });
-}
-
-function printJSON(jsonObj) {
-  console.log('{');
-  var str = '';
-  for(var p in jsonObj){
-    str += '  ' + '"' + p + '":"' + jsonObj[p] + '"' + ',\n';
+    fs.writeFile(exportPath, JSON.stringify(exportData, null, 2), 'utf8', function(err) {
+      if (err) {
+        console.log(err);
+      } else {
+        console.log("The file was saved at: " + exportPath);
+      }
+    });
   }
-  str = str.slice(0, -2);
-  console.log(str);
-  console.log('}');
 }
+
+// ---
+// print functions
+// ---
+function printResult(jsonObj) {
+  console.log('Components found:');
+  console.log(printJSON(jsonObj, '', 0));
+}
+
+function printJSON (jsonObj, str, deep) {
+  deep++;
+  str += '{\n';
+  var i = 0, len = Object.keys(jsonObj).length;
+  for(var p in jsonObj){
+    str += repeatedChars(deep * 2, ' ') + '"' + p + '": ';
+    // simply judge if it's json
+    if(typeof jsonObj[p] === 'object'){
+      str = printJSON(jsonObj[p], str, deep);
+    }else{
+      str += '"' + jsonObj[p] + '"';
+      if(++i !== len){
+        str += ',\n';
+      }else{
+        str += '\n';
+      }
+    }
+  }
+  str += repeatedChars((deep-1) * 2, ' ') + '}';
+  if(deep !== 1){
+    str += '\n';
+  }
+  return str;
+}
+function repeatedChars(times, char) {
+  return new Array(times + 1).join(char);
+}
+
