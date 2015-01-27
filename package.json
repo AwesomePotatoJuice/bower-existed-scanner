@@ -1,6 +1,6 @@
 {
   "name": "bower-existed-scanner",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "main": "index.js",
   "description": "Scan the existed installed bower components, and export it as the dependency list.",
   "homepage": "https://github.com/chuyik/bower-existed-scanner",

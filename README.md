@@ -9,21 +9,17 @@ npm install bower-existed-scanner
 ```
 node . option1 [option2]
 ```
-- **option1**: Location of bower components (fullpath)
+- **option1**: Location of bower components (relative or full path)
 - **option2**: Export location, default: `./_bower.json`
 
-# Example
-- Mac & Linux
-
-  ```
-  node . /Users/u/works/bower_components
-  ```
-  
-- Windows
-
-  ```
-  node . D:/works/bower_components
-  ```
+# Examples
+```
+node . ./bower_components
+node . ./lib/bower_components
+node . /Users/u/works/bower_components
+node . D:/works/bower_components
+node . D:/works/bower_components ./output.json
+```
 
 # What the output looks like?
 It looks like:
